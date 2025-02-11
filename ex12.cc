@@ -28,7 +28,8 @@ int main(int argc, char** argv) {
   // Used to store each word from the file
   std::string word;
 
-  // Read the file one word at a time until we hit eof
+  // Read the file one word at a time until we hit eof and increment its entry in words
+  // words[] will initialize a key to zero if it is new
   while (f >> word) {
     words[word]++;
   }
@@ -38,7 +39,7 @@ int main(int argc, char** argv) {
     std::cout << p.first << " " << p.second << "\n";
   }
 
-  // CLose the file and exit with success
+  // Close the file and exit with success
   f.close();
   return EXIT_SUCCESS;
 }
